@@ -34,7 +34,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="flightrightacademy.flightrightreservations.MainActivity" />
         </activity>
-        <activity android:name=".Calendar"></activity>
+        <activity android:name=".calendarActivity"></activity>
     </application>
 
 </manifest>
