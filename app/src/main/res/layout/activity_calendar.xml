@@ -33,7 +33,8 @@
             <DatePicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/datePicker" />
+                android:id="@+id/datePicker"
+                android:datePickerMode="spinner"/>
 
             <TimePicker
                 android:layout_width="wrap_content"

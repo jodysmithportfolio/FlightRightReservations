@@ -21,12 +21,14 @@ public class instructor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructor);
         final Intent nextActivity = new Intent(this, calendarActivity.class);
+        nextActivity.putExtra("plane", planeNum);
         final ImageView v = (ImageView) findViewById(R.id.imageView2);
         if(v!=null){
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     nextActivity.putExtra("instructor", 1);
+
                     startActivity(nextActivity);
                 }
             });
