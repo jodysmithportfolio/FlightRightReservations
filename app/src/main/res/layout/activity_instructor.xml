@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2015 Cessna 172 Skyhawk"
+        android:text="Pick an Instructor"
         android:id="@+id/textView"
         android:layout_alignBottom="@+id/horizontalScrollView"
         android:layout_alignLeft="@+id/horizontalScrollView"
