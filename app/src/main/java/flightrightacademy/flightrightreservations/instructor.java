@@ -1,25 +1,35 @@
 package flightrightacademy.flightrightreservations;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class instructor extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        Intent intent = getIntent();
+        Intent backToMain = new Intent(this, MainActivity.class);
+        boolean altNavFlag = false; // determines if we got here by a back button, etc.
+        int planeNum = intent.getIntExtra("plane", 0);
+        if(planeNum == 0){
+            altNavFlag = true;
+            startActivity(backToMain);
+        }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final Intent nextActivity = new Intent(this, instructor.class);
+        setContentView(R.layout.activity_instructor);
+        final Intent nextActivity = new Intent(this, Calendar.class);
         final ImageView v = (ImageView) findViewById(R.id.imageView2);
         if(v!=null){
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    nextActivity.putExtra("plane", 1);
+                    nextActivity.putExtra("instructor", 1);
                     startActivity(nextActivity);
                 }
             });
@@ -30,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             v2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v2) {
-                    nextActivity.putExtra("plane", 2);
+                    nextActivity.putExtra("instructor", 2);
                     startActivity(nextActivity);
                 }
             });
@@ -41,13 +51,14 @@ public class MainActivity extends AppCompatActivity {
             v3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v3) {
-                    nextActivity.putExtra("plane", 3);
+                    nextActivity.putExtra("instructor", 3);
                     startActivity(nextActivity);
                 }
             });
         }
 
 
-    }
 
+
+    }
 }
